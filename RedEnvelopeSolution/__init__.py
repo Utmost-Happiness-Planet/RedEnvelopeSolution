@@ -41,6 +41,8 @@ class RedEnvelopeSolution:
                 # 上下浮动倍率，其中一个为0则不进行调整
                 self.f_max = floating[0]
                 self.f_min = floating[1]
+            if alpha is not None:
+                self.alpha = alpha
             self.adjust_data: Callable[[], list[int]]
             if adjust_func is None:
                 self.adjust_data = self.__default_adjust_data
