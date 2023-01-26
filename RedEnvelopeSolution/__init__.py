@@ -49,6 +49,8 @@ class RedEnvelopeSolution:
             self.data = self.adjust_data(self)
             if show:
                 self.print(2)
+        if show:
+            plt.show()
 
     def __str__(self) -> str:
         return str([d / self.lni1 for d in self.data])
@@ -75,10 +77,6 @@ class RedEnvelopeSolution:
         print(f'float data: {float_data}')
         print(f'sum: {sum(float_data)}')
         plt.scatter(range(0, self.n), float_data, marker=f'{i}')
-
-
-def plt_show():
-    plt.show()
 
 
 def set_plt_backend(s: str):
